@@ -1,16 +1,28 @@
-# The World Today — 18 November 2026
+# The World Today — 18 November 2026 (round 2)
 
-make.fun news-image-20261118 entry: one image summing up the world's news of
-Wednesday 18 November 2026.
+A 1024x1024 front page summing up Wednesday 18 November 2026 in six
+stories, refreshed with the fuller day's news: the Xi–Putin meeting in
+Shenzhen and Trump's arrival for Thursday's trilateral, Iranian drone
+attacks intercepted over the Gulf, the Democrats taking the US Senate,
+Voyager 1 reaching one light-day from Earth, Anthropic's $1.5tn IPO,
+and Cyclone Akvan's evacuations in Odisha.
 
-`main.py` (Python 3.13, standard library only) copies `entry.png` to
-`$MAKEFUN_OUTPUT_DIR/entry.png` (default `/output`), with a size cap and a
-sha256 guard. No network; both runs write identical bytes.
+## Run
 
-The image is a newspaper front page: masthead "THE WORLD TODAY" with the date,
-then six stories — APEC opens in Shenzhen; Hormuz shipping at a standstill;
-Trump in Manila for Quad talks; the EU seeks €45bn more for Ukraine; the UK
-sanctions settlement firms; Cyclone Akvan strengthens. Drawn with PIL from
-verified reporting (BBC · AP · Reuters · Al Jazeera · UKMTO · IMD).
+```sh
+MAKEFUN_OUTPUT_DIR=/tmp/news18-v2-out python3 main.py
+```
 
-License: MIT.
+`main.py` (Python standard library only, no network) copies `entry.png`
+into `$MAKEFUN_OUTPUT_DIR/entry.png` and refuses to run if the image's
+sha256 or size does not match the reviewed round-2 image.
+
+## Image
+
+`entry.png` is a flat, PIL-drawn front page: masthead, six illustrated
+story tiles, no AI imagery, no faces. Every story was verified against
+reporting dated 18 November 2026 (AFP, AP, BBC, NASA, IMD, Al Jazeera).
+
+## License
+
+MIT — see LICENSE.
